@@ -1,25 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router , Route , Switch } from 'react-router-dom';
+
+
+
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+
+
+import Navbar from './component/Navbar';
+import Create from './component/Create';
+import Update from './component/Update';
+import Delete from './component/Delete';
+import List from './component/List';
+import Confirm from './component/Confirm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+            <Switch>
+               <Route exact path = "/" component = {List} />
+               <Route path = "/viewAllCourses" component = {List} />
+               <Route path = "/addCourses" component = {Create} />
+               <Route path = "/editCourses" component = {Update} />
+               <Route path = "/removeCourses" component = {Delete} />
+               <Route path = "/confirmCourses" component = {Confirm} />
+            </Switch>
+      </div>
+    </Router>
   );
 }
 
