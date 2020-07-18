@@ -1,0 +1,35 @@
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Steps for creating CRUD screen in Angular
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Install React 
+2. Create React App project 
+3. Execute React App project to verify everything is fine
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Create additional components needed for the project 
+	 Here NavBar , CreateUpdate and List Component
+5. Make entries of either exported function or class that renders a JMX tags ( HTML React screen) in those additional components
+	Here NavBar , CreateUpdate and List Component should have either a exported function or exported class that returns HTML tags
+6. Import BrowserRouter Route and Switch from React-Router-Dom in App Component ( App.js ) 
+7. Set the path of NavBar , CreateUpdate and List Component in Routes 
+	Here the code is written for slash which URL goes to which component in App.js
+8. Add the NavBar HTML content to the NavBar component ( NavBar.js)
+   	The NavBar component has hyperlinks to Add/Create Component and List/View Component 
+9. Add the List HTML content to the List component ( List.js)
+10. Using State and componentWillMount in List Component fetch the value of Get Rest API method using Axios , Fetch etc method	
+11. Refer the dynamic content from State to HTML component of List
+	Here map and key objects used to loop through an array of Objects returned 
+12. The Edit and Delete Button has a 'Link To' tag to move into another component by passing the values as state 
+	Here the passed value is Course Object , Edit Button has a 'Link To' tag to editCourses and Remove Button has a 'Link To' tag to removeCourses
+13. The Update and Delete Component have their entries in Switch of the App Component as Routing entries
+14. The Update component has a form filled by courses prop (from List Component) and fetched by Location property in the SetState function 
+15. Once Submission of the form from Update Component uses History function to push the course as props to the Confirm Component
+16. The Confirm component has a form filled by courses prop (from Update Component) and fetched by Location property in the SetState function 
+17. The Confirm component has a Submit Button that calls the Axios Library to make PUT Call and re-routing to LIST Component Page
+18. The Delete component has a form filled by courses prop (from List Component) and fetched by Location property in the SetState function 
+19. Once Submission of the form from Delete Component uses History function to push the course as props to the Confirm Component
+20. The Confirm component has a form filled by courses prop (from Delete Component) and fetched by Location property in the SetState function 
+21. The Confirm component has a Submit Button that calls the Axios Library to make DELETE Call and re-routing to LIST Component Page
+22. The Create component has a form filled by onChange event of the textbox with initial state set to NULL for all the textbox objects 
+23. Once Submission of the form from Create Component uses History function to push the course as props to the Confirm Component
+24. The Confirm component has a form filled by courses prop (from Create Component) and fetched by Location property in the SetState function 
+25. The Confirm component has a Submit Button that calls the Axios Library to make POST Call and re-routing to LIST Component Page
